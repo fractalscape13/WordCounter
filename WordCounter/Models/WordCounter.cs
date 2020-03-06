@@ -21,14 +21,15 @@ namespace WordCounter.Models
       bool outcome = input.All(Char.IsLetter);
       if (outcome)
       {
-        RootWord = input;
+        RootWord = input.ToLower();
       }
       return outcome;
     }
 
     public bool ValidateSentence(string input)
     {
-      Sentence = input.Split(' ');
+      string lowerCase = input.ToLower();
+      Sentence = lowerCase.Split(' ');
       bool outcome = false;
       foreach (string word in Sentence)
       {

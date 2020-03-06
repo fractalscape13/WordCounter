@@ -29,9 +29,9 @@ namespace WordCounter.Test
     {
       RepeatCounter newCount = new RepeatCounter();
       string inputSent = "This sample is a sample of a sample sentence";
-      newCount.ValidateSentence(inputSent);
       string inputWord = "sample";
-      newCount.RootWord = inputWord;
+      newCount.ValidateSentence(inputSent);
+      newCount.ValidateWord(inputWord);
       int result = newCount.CountWords();
       Assert.AreEqual(3, result);
     }
