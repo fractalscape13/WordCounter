@@ -23,5 +23,17 @@ namespace WordCounter.Test
       bool result = newCount.ValidateSentence(input);
       Assert.AreEqual(true, result);
     }
+    
+    [TestMethod]
+    public void CountWords_CheckForOccurences_Int()
+    {
+      RepeatCounter newCount = new RepeatCounter();
+      string inputSent = "This sample is a sample of a sample sentence";
+      newCount.ValidateSentence(inputSent);
+      string inputWord = "sample";
+      newCount.RootWord = inputWord;
+      int result = newCount.CountWords();
+      Assert.AreEqual(2, result);
+    }
   }
 }

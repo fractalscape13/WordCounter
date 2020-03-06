@@ -6,12 +6,13 @@ namespace WordCounter.Models
   public class RepeatCounter
   {
     public string RootWord { get; set; }
-    public string Sentence { get; set; }
+    public string[] Sentence { get; set; }
     public int WordCount { get; set; }
     public RepeatCounter()
     {
       RootWord = "";
-      Sentence = "";
+      string[] words = { };
+      Sentence = words;
       WordCount = 0;
     }
 
@@ -27,9 +28,9 @@ namespace WordCounter.Models
 
     public bool ValidateSentence(string input)
     {
-      string[] sentenceArray = input.Split(' ');
+      Sentence = input.Split(' ');
       bool outcome = false;
-      foreach (string word in sentenceArray)
+      foreach (string word in Sentence)
       {
         outcome = word.All(Char.IsLetter);
         if (!outcome)
@@ -38,6 +39,18 @@ namespace WordCounter.Models
         }
       }
       return outcome;
+    }
+
+    public int CountWords()
+    {
+      foreach (string word in Sentence)
+      {
+        if (word == RootWord)
+        {
+          WordCount++;
+        }
+      }
+      return WordCount;
     }
 
 
