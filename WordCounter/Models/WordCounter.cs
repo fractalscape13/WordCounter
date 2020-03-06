@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
@@ -62,7 +61,5 @@ namespace WordCounter.Models
       }
       return WordCount;
     }
-
-
   }
 }
