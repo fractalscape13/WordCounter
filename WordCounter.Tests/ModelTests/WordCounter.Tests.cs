@@ -10,7 +10,7 @@ namespace WordCounter.Test
     public void firstttest()
     {
       RepeatCounter newCount = new RepeatCounter();
-      string input = "sam6ple";
+      string input = "sample";
       bool result = newCount.ValidateWord(input);
       Assert.AreEqual(true, result);
     }
