@@ -6,7 +6,7 @@ namespace WordCounter.Models
   public class RepeatCounter
   {
     public string RootWord { get; set; }
-    public string[] Sentence { get; set; }
+    public string[] Sentence = { };
     public int WordCount { get; set; }
     public string[] sentence = { };
     public RepeatCounter()

@@ -11,36 +11,36 @@ namespace WordCounter
       Console.ForegroundColor = ConsoleColor.DarkYellow;
       TypeLine("Welcome to the Word Counter program");
       string inputWord = GetWord();
-      string inputSent = GetSentence();
       RepeatCounter newCount = new RepeatCounter();
       bool wordValid = newCount.ValidateWord(inputWord);
-      bool sentValid = newCount.ValidateSentence(inputSent);
-      if (wordValid && sentValid)
+      if (wordValid)
       {
-        int result = newCount.CountWords();
-        Console.Clear();
-        Console.Write(Environment.NewLine);
-        if (result == 1)
+        string inputSent = GetSentence();
+        bool sentValid = newCount.ValidateSentence(inputSent);
+        if (sentValid)
         {
-          TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered only " + result + " time. Yay!");
-          PlayAgain();
-        }
-        else
-        {
-          TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered " + result + " times. Yay!");
-          PlayAgain();
-        }
-      }
-      else
-      {
-        if (!wordValid)
-        {
-          ErrorMessage("word");
+          int result = newCount.CountWords();
+          Console.Clear();
+          Console.Write(Environment.NewLine);
+          if (result == 1)
+          {
+            TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered only " + result + " time. Yay!");
+            PlayAgain();
+          }
+          else
+          {
+            TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered " + result + " times. Yay!");
+            PlayAgain();
+          }
         }
         else if (!sentValid)
         {
           ErrorMessage("sentence");
         }
+      }
+      else
+      {
+        ErrorMessage("word");
       }
     }
 
@@ -102,7 +102,7 @@ namespace WordCounter
       System.Threading.Thread.Sleep(400);
       TypeLine("2..................................");
       System.Threading.Thread.Sleep(400);
-      TypeLine("4...........................................");
+      TypeLine("1...........................................");
       System.Threading.Thread.Sleep(800);
       Main(); 
     }
