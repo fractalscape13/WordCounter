@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
@@ -8,7 +9,6 @@ namespace WordCounter.Models
     public string RootWord { get; set; }
     public string[] Sentence { get; set; }
     public int WordCount { get; set; }
-    // public string[] sentence = { };
     public RepeatCounter()
     {
       RootWord = "";
@@ -28,8 +28,17 @@ namespace WordCounter.Models
 
     public bool ValidateSentence(string input)
     {
-      string lowerCase = input.ToLower();
-      Sentence = lowerCase.Split(' ');
+      string lowerSentence = input.ToLower();
+      char[] specialChar = {'.', ',', '!', '?', '-', '@', '#', '$', '_', '`', '~', ';', ':', '/', '%', '^', '&', '*', '(', ')'};
+      char spaceChar = ' ';
+      foreach (char symbol in specialChar)
+      {
+        if (lowerSentence.Contains(symbol))
+        {
+          lowerSentence = lowerSentence.Replace(symbol, spaceChar);
+        }
+      }
+      Sentence = lowerSentence.Split(' ');
       bool outcome = false;
       foreach (string word in Sentence)
       {
