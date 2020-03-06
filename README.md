@@ -8,7 +8,7 @@ _Lets a user enter a word and a sentence, and returns the amount of times the wo
 
 ## Setup/Installation Requirements
 
-* _Setup requires dotnet core to be installed
+* _Setup requires dotnet core to be installed_
 * _Visit my GitHub repository at https://github.com/fractalscape13/WordCounter and clone the repository (git clone https://github.com/fractalscape13/WordCounter)_
 * _In terminal, navigate to WordCounter directory and run "dotnet build" to build program_
 * _In terminal, run "dotnet run" to run program_
@@ -21,6 +21,7 @@ _Lets a user enter a word and a sentence, and returns the amount of times the wo
 | :------------- | :----------: | -----------: |
 | Allow a user to enter a word  | Example: User enters "sample"  | Return: "sample"  |
 | Allow a user to enter a sentence  | Example: User enters "This is a sample sentence"  | Return: "This is a sample sentence"  |
+| Validate that both word and sentence only contain letters  | Example: User enters "This sentence has a 2 in it"  | Return: "Error, invalid input"  |
 | Allow a user to see frequency of occurence of word in sentence  | Example: Submits word and sentence  | Return: "sample" occurs 1 time in this sentence  |
 | Allow a user to start program over  | Example: User enters "yes"  | Return: Program starts over  |
 
