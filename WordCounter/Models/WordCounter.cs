@@ -8,11 +8,11 @@ namespace WordCounter.Models
     public string RootWord { get; set; }
     public string[] Sentence { get; set; }
     public int WordCount { get; set; }
+    public string[] sentence = { };
     public RepeatCounter()
     {
       RootWord = "";
-      string[] words = { };
-      Sentence = words;
+      Sentence = sentence;
       WordCount = 0;
     }
 
