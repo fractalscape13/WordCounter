@@ -36,7 +36,6 @@ namespace WordCounter.Models
         {
           break;
         }
-        
       }
       return outcome;
     }

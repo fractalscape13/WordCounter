@@ -19,7 +19,7 @@ namespace WordCounter.Test
     public void ValidateSentence_CheckForLettersOnly_True()
     {
       RepeatCounter newCount = new RepeatCounter();
-      string input = "This i4s a sample sentence";
+      string input = "This is a sample sentence";
       bool result = newCount.ValidateSentence(input);
       Assert.AreEqual(true, result);
     }
