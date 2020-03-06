@@ -2,6 +2,8 @@
 
 #### _A C# console program that checks for the occurence of a chosen word in a sentence, 03.06.2020_
 
+#### By _**JW**_
+
 ## Description
 
 _Lets a user enter a word and a sentence, and returns the amount of times the word occurs in the sentence._
@@ -21,9 +23,9 @@ _Lets a user enter a word and a sentence, and returns the amount of times the wo
 | :------------- | :----------: | -----------: |
 | Allow a user to enter a word  | Example: User enters "sample"  | Return: "sample"  |
 | Allow a user to enter a sentence  | Example: User enters "This is a sample sentence"  | Return: "This is a sample sentence"  |
-| Validate that word only contains letters  | Example: User enters "sk8board"  | Return: "Error, invalid input"  |
-| Validate that sentence only contains letters  | Example: User enters "My sentence is: sk8boarding is cool!"  | Return: "Error, invalid input"  |
-| Allow a user to see frequency of occurence of word in sentence  | Example: Submits word and sentence  | Return: "sample" occurs 1 time in this sentence  |
+| Validate that word only contains letters  | Example: User enters "sk8board"  | Return: Error message  |
+| Validate that sentence only contains letters  | Example: User enters "My sentence is: sk8boarding is cool!"  | Return: Error message  |
+| Allow a user to see frequency of occurence of word in sentence  | Example: Submits valid word and sentence  | Return: "sample" occurs 1 time in this sentence  |
 | Allow a user to start program over  | Example: User enters "yes"  | Return: Program starts over  |
 
 
@@ -41,4 +43,4 @@ _Git, C#, .NET, MSTest_
 
 ### License
 
-MIT License, 2020
+MIT License, 2020 **_JW_**

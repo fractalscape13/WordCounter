@@ -8,6 +8,7 @@ namespace WordCounter
     public static void Main()
     {
       Console.Clear();
+      Console.ForegroundColor = ConsoleColor.DarkYellow;
       TypeLine("Welcome to the Word Counter program");
       string inputWord = GetWord();
       string inputSent = GetSentence();
@@ -22,10 +23,12 @@ namespace WordCounter
         if (result == 1)
         {
           TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered only " + result + " time. Yay!");
+          PlayAgain();
         }
         else
         {
           TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered " + result + " times. Yay!");
+          PlayAgain();
         }
       }
       else
@@ -56,6 +59,22 @@ namespace WordCounter
       return inputSent;
     }
 
+    public static void PlayAgain()
+    {
+      TypeLine("Would you like to enter a new word and sentence? Enter yes or no");
+      string response = Console.ReadLine();
+      if (response.ToLower() == "yes" || response.ToLower() == "y")
+      {
+        Main();
+      }
+      else 
+      {
+        Console.Write(Environment.NewLine);
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        TypeLine("Okay, thanks for using the Word Counter! Bye!");
+      }
+    }
+
     public static void TypeLine(string input)
     {
       for (int i = 0; i < input.Length; i++)
@@ -73,7 +92,7 @@ namespace WordCounter
       Console.ForegroundColor = ConsoleColor.Red;
       if (error == "word")
       {
-        TypeLine("Your WORD wasn't valid, please use ONLY letters. Don't include any special characters or spaces. Let's try again in....");
+        TypeLine("Your WORD wasn't valid, please use ONLY letters. Don't include any spaces, numbers or special characters. Let's try again in....");
       }
       else if (error == "sentence")
       {
@@ -85,7 +104,6 @@ namespace WordCounter
       System.Threading.Thread.Sleep(400);
       TypeLine("4...........................................");
       System.Threading.Thread.Sleep(800);
-      Console.ForegroundColor = ConsoleColor.White;
       Main(); 
     }
   }
