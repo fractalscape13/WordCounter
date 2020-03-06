@@ -9,9 +9,10 @@ namespace WordCounter.Test
     [TestMethod]
     public void firstttest()
     {
-
-
-      Assert.AreEqual();
+      RepeatCounter newCount = new RepeatCounter();
+      string input = "sam6ple";
+      bool result = newCount.ValidateWord(input);
+      Assert.AreEqual(true, result);
     }
   }
 }
