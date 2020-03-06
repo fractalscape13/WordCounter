@@ -21,7 +21,8 @@ _Lets a user enter a word and a sentence, and returns the amount of times the wo
 | :------------- | :----------: | -----------: |
 | Allow a user to enter a word  | Example: User enters "sample"  | Return: "sample"  |
 | Allow a user to enter a sentence  | Example: User enters "This is a sample sentence"  | Return: "This is a sample sentence"  |
-| Validate that both word and sentence only contain letters  | Example: User enters "This sentence has a 2 in it"  | Return: "Error, invalid input"  |
+| Validate that word only contains letters  | Example: User enters "sk8board"  | Return: "Error, invalid input"  |
+| Validate that sentence only contains letters  | Example: User enters "My sentence is: sk8boarding is cool!"  | Return: "Error, invalid input"  |
 | Allow a user to see frequency of occurence of word in sentence  | Example: Submits word and sentence  | Return: "sample" occurs 1 time in this sentence  |
 | Allow a user to start program over  | Example: User enters "yes"  | Return: Program starts over  |
 

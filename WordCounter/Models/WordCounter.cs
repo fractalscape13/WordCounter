@@ -18,7 +18,29 @@ namespace WordCounter.Models
     public bool ValidateWord(string input)
     {
       bool outcome = input.All(Char.IsLetter);
+      if (outcome)
+      {
+        RootWord = input;
+      }
       return outcome;
     }
+
+    public bool ValidateSentence(string input)
+    {
+      string[] sentenceArray = input.Split(' ');
+      bool outcome = false;
+      foreach (string word in sentenceArray)
+      {
+        outcome = word.All(Char.IsLetter);
+        if (!outcome)
+        {
+          break;
+        }
+        
+      }
+      return outcome;
+    }
+
+
   }
 }
