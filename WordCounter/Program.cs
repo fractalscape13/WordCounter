@@ -9,26 +9,51 @@ namespace WordCounter
     {
       Console.Clear();
       TypeLine("Welcome to the Word Counter program");
-      TypeLine("Please enter a single word (no numbers, spaces or special characters please)");
-      string inputWord = Console.ReadLine();
-      Console.Clear();
-      TypeLine("Please enter a sentence (no numbers, punctuation or special characters please)");
-      string inputSent = Console.ReadLine();
+      string inputWord = GetWord();
+      string inputSent = GetSentence();
       RepeatCounter newCount = new RepeatCounter();
-      newCount.ValidateWord(inputWord);
-      newCount.ValidateSentence(inputSent);
-      int result = newCount.CountWords();
-      Console.Clear();
-      if (result == 1)
+      bool wordValid = newCount.ValidateWord(inputWord);
+      bool sentValid = newCount.ValidateSentence(inputSent);
+      if (wordValid && sentValid)
       {
-        TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered only " + result + " time. Yay!");
+        int result = newCount.CountWords();
+        Console.Clear();
+        Console.Write(Environment.NewLine);
+        if (result == 1)
+        {
+          TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered only " + result + " time. Yay!");
+        }
+        else
+        {
+          TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered " + result + " times. Yay!");
+        }
       }
       else
       {
-        TypeLine("The word '" + newCount.RootWord + "' appears in the sentence you entered " + result + " times. Yay!");
+        if (!wordValid)
+        {
+          ErrorMessage("word");
+        }
+        else if (!sentValid)
+        {
+          ErrorMessage("sentence");
+        }
       }
+    }
 
+    public static string GetWord()
+    {
+      TypeLine("Please enter a single word (no numbers, spaces or special characters please)");
+      string inputWord = Console.ReadLine();
+      return inputWord;
+    }
 
+    public static string GetSentence()
+    {
+      Console.Write(Environment.NewLine);
+      TypeLine("Please enter a sentence (no numbers, punctuation or special characters please)");
+      string inputSent = Console.ReadLine();
+      return inputSent;
     }
 
     public static void TypeLine(string input)
@@ -40,6 +65,28 @@ namespace WordCounter
       }
       Console.Write(Environment.NewLine);
       Console.Write(Environment.NewLine);
+    }
+
+    public static void ErrorMessage(string error)
+    {
+      Console.Write(Environment.NewLine);
+      Console.ForegroundColor = ConsoleColor.Red;
+      if (error == "word")
+      {
+        TypeLine("Your WORD wasn't valid, please use ONLY letters. Don't include any special characters or spaces. Let's try again in....");
+      }
+      else if (error == "sentence")
+      {
+        TypeLine("Your SENTENCE wasn't valid, please use ONLY letters. Don't include any punctuation, numbers or special characters. Let's try again in...");
+      }
+      TypeLine("3........................");
+      System.Threading.Thread.Sleep(400);
+      TypeLine("2..................................");
+      System.Threading.Thread.Sleep(400);
+      TypeLine("4...........................................");
+      System.Threading.Thread.Sleep(800);
+      Console.ForegroundColor = ConsoleColor.White;
+      Main(); 
     }
   }
 }
