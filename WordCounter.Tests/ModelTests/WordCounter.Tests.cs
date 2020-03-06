@@ -9,7 +9,9 @@ namespace WordCounter.Test
     [TestMethod]
     public void firstttest()
     {
-      
+
+
+      Assert.AreEqual();
     }
   }
 }
