@@ -33,7 +33,7 @@ namespace WordCounter.Test
       string inputWord = "sample";
       newCount.RootWord = inputWord;
       int result = newCount.CountWords();
-      Assert.AreEqual(2, result);
+      Assert.AreEqual(3, result);
     }
   }
 }
