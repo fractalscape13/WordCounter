@@ -13,8 +13,13 @@ namespace WordCounter
       string inputWord = GetWord();
       RepeatCounter newCount = new RepeatCounter();
       bool wordValid = newCount.ValidateWord(inputWord);
+      bool realWord = newCount.RealWord(inputWord);
       if (wordValid)
       {
+        if (!realWord)
+        {
+          DoesntExist();
+        }
         string inputSent = GetSentence();
         bool sentValid = newCount.ValidateSentence(inputSent);
         if (sentValid)
@@ -59,6 +64,19 @@ namespace WordCounter
       return inputSent;
     }
 
+    public static void DoesntExist()
+    {
+      Console.Write(Environment.NewLine);
+      Console.ForegroundColor = ConsoleColor.DarkMagenta;
+      TypeLine("It appears your word doesn't exist in the dictionary.  Are you sure you want to continue? Yes or no");
+      Console.ForegroundColor = ConsoleColor.DarkYellow;
+      string answer = Console.ReadLine();
+      if (answer == "no" || answer == "No" || answer == "n")
+      {
+        Main();
+      }
+    }
+
     public static void PlayAgain()
     {
       TypeLine("Would you like to enter a new word and sentence? Enter yes or no");
@@ -96,7 +114,7 @@ namespace WordCounter
       }
       else if (error == "sentence")
       {
-        TypeLine("Your SENTENCE wasn't valid, please use ONLY letters. Don't include any punctuation, numbers or special characters. Let's try again in...");
+        TypeLine("Your SENTENCE wasn't valid, please use ONLY letters. Don't include any numbers or special characters. Let's try again in...");
       }
       TypeLine("3........................");
       System.Threading.Thread.Sleep(400);

@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
-
+using System.Text;
+using System.Diagnostics;
+using System.IO;
 namespace WordCounter.Models
 {
   public class RepeatCounter
@@ -13,6 +16,22 @@ namespace WordCounter.Models
       RootWord = "";
       Sentence = new string[] { };
       WordCount = 0;
+    }
+
+    public List<string> Dictionary = File.ReadAllLines("/Users/Joe/Desktop/WordCounter.Solution/newDictionary.txt").ToList();
+
+    public bool RealWord(string input)
+    {
+      bool outcome = false;
+      foreach (string entry in Dictionary)
+      {
+        if (entry == input)
+        {
+          outcome = true;
+          break;
+        }
+      }
+          return outcome;
     }
 
     public bool ValidateWord(string input)
