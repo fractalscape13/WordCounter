@@ -12,7 +12,7 @@ _Lets a user enter a word and a sentence, and returns the amount of times the wo
 
 * _Setup requires dotnet core to be installed_
 * _Visit my GitHub repository at https://github.com/fractalscape13/WordCounter and clone the repository (git clone https://github.com/fractalscape13/WordCounter)_
-* _The dictionary file requires the file path to match the computer on which the program is run. If your project folder does not follow this path to the text file newDictionary.txt: (/Users/Guest/Desktop/WordCounter.Solution/newDictionary.txt), it won't work.  Either adjust the file path on line 21 of WordCounter.Solution/WordCounter/Models/WordCounter.cs to fit your location, or you can bypass this by commenting out or deleting line 16 of WordCounter.Solution/WordCounter/Program.cs and commenting in (remove the slashes) on line 18, which will set the value of 'bool realWord' permanently to true._
+* _The DictionaryCheck method requires the file path for the list Dictionary to match the computer on which the program is run. If your project folder does not follow this path to the text file newDictionary.txt: (/Users/Guest/Desktop/WordCounter.Solution/newDictionary.txt), it won't work.  Either adjust the file path on line 21 of WordCounter.Solution/WordCounter/Models/WordCounter.cs to fit your location, or you can bypass this by commenting out or deleting line 16 of WordCounter.Solution/WordCounter/Program.cs and commenting in (remove the slashes) on line 18, which will set the value of 'bool realWord' permanently to true._
 * _In terminal, navigate to WordCounter directory and run "dotnet build" to build program_
 * _In terminal, run "dotnet run" to run program_
 * _Open files in text editor to view code_

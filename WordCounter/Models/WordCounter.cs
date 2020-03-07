@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Diagnostics;
 using System.IO;
 namespace WordCounter.Models
 {
@@ -18,9 +16,9 @@ namespace WordCounter.Models
       WordCount = 0;
     }
 
-    public List<string> Dictionary = File.ReadAllLines("/Users/Joe/Desktop/WordCounter.Solution/newDictionary.txt").ToList();
+    public List<string> Dictionary = File.ReadAllLines("/Users/Guest/Desktop/WordCounter.Solution/newDictionary.txt").ToList();
 
-    public bool RealWord(string input)
+    public bool DictionaryCheck(string input)
     {
       bool outcome = false;
       foreach (string entry in Dictionary)
