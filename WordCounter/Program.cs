@@ -14,6 +14,8 @@ namespace WordCounter
       RepeatCounter newCount = new RepeatCounter();
       bool wordValid = newCount.ValidateWord(inputWord);
       bool realWord = newCount.RealWord(inputWord);
+      // if the filepath for the dictionary text file is not working properly, the program will exit after you enter the first word.  to bypass this, comment out line 16 and use the bool value for realWord from line 18 instead
+      // bool realWord = true;
       if (wordValid)
       {
         if (!realWord)
