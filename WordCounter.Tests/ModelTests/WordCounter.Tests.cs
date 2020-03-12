@@ -57,7 +57,19 @@ namespace WordCounter.Test
       newCount.ValidateSentence(inputSent);
       newCount.ValidateWord(inputWord);
       int result = newCount.CountWords();
-      Assert.AreEqual(3, result);
+      Assert.AreEqual(2, result);
+    }
+    
+    [TestMethod]
+    public void CountWords_CountUpperAndLowerCase_Int()
+    {
+      RepeatCounter newCount = new RepeatCounter();
+      string inputSent = "This SAMPLE sentence is a sAmplE of a sentence";
+      string inputWord = "sample";
+      newCount.ValidateSentence(inputSent);
+      newCount.ValidateWord(inputWord);
+      int result = newCount.CountWords();
+      Assert.AreEqual(2, result);
     }
   }
 }
