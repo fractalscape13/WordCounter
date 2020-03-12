@@ -16,7 +16,7 @@ namespace WordCounter.Models
       WordCount = 0;
     }
 
-    public List<string> Dictionary = File.ReadAllLines("/Users/Guest/Desktop/WordCounter.Solution/newDictionary.txt").ToList();
+    public List<string> Dictionary = File.ReadAllLines("/Users/Joe/Desktop/coding/2020projects-c#/WordCounter.Solution/newDictionary.txt").ToList();
 
     public bool DictionaryCheck(string input)
     {

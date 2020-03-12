@@ -27,6 +27,8 @@ _Lets a user enter a word and a sentence, and returns the amount of times the wo
 | Validate that word only contains letters  | Example: User enters "sk8board"  | Return: Error message  |
 | Validate that sentence only contains letters  | Example: User enters "My sentence is: sk8boarding is cool!"  | Return: Error message  |
 | Allow a user to see frequency of occurence of word in sentence  | Example: Submits valid word and sentence  | Return: "sample" occurs 1 time in this sentence  |
+| Program counts multiple instances of word  | Example: User enters "cat" as word and "a black cat and a white cat" as sentence  | Return: Program returns "cat appears 2 times"  |
+| Program doesn't count word existing as part of a larger word  | Example: User enters "cat"  | Return: Sentence with "cathedral" returns 0 instances of "cat"  |
 | Allow a user to start program over  | Example: User enters "yes"  | Return: Program starts over  |
 
 

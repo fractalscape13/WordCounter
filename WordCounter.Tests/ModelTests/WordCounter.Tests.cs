@@ -35,5 +35,17 @@ namespace WordCounter.Test
       int result = newCount.CountWords();
       Assert.AreEqual(3, result);
     }
+
+    [TestMethod]
+    public void CountWords_DontCountWordsContainedInOtherWords_Int()
+    {
+      RepeatCounter newCount = new RepeatCounter();
+      string inputSent = "A cat named cat cathy came into my cathedral";
+      string inputWord = "cat";
+      newCount.ValidateSentence(inputSent);
+      newCount.ValidateWord(inputWord);
+      int result = newCount.CountWords();
+      Assert.AreEqual(1, result);
+    }
   }
 }
