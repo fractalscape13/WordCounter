@@ -25,15 +25,15 @@ namespace WordCounter.Test
     }
     
     [TestMethod]
-    public void CountWords_CheckForOccurences_Int()
+    public void CountWords_CheckForOccurence_Int()
     {
       RepeatCounter newCount = new RepeatCounter();
-      string inputSent = "This sample is a sample of a sample sentence";
+      string inputSent = "This is a sample sentence";
       string inputWord = "sample";
       newCount.ValidateSentence(inputSent);
       newCount.ValidateWord(inputWord);
       int result = newCount.CountWords();
-      Assert.AreEqual(3, result);
+      Assert.AreEqual(1, result);
     }
 
     [TestMethod]
@@ -46,6 +46,18 @@ namespace WordCounter.Test
       newCount.ValidateWord(inputWord);
       int result = newCount.CountWords();
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void CountWords_CountMultipleOccurences_Int()
+    {
+      RepeatCounter newCount = new RepeatCounter();
+      string inputSent = "This sample sentence is a sample of a sentence";
+      string inputWord = "sample";
+      newCount.ValidateSentence(inputSent);
+      newCount.ValidateWord(inputWord);
+      int result = newCount.CountWords();
+      Assert.AreEqual(3, result);
     }
   }
 }
