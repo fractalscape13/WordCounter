@@ -40,7 +40,7 @@ namespace WordCounter.Test
     public void CountWords_DontCountWordsContainedInOtherWords_Int()
     {
       RepeatCounter newCount = new RepeatCounter();
-      string inputSent = "A cat named cat cathy came into my cathedral";
+      string inputSent = "A cat named cathy came into my cathedral";
       string inputWord = "cat";
       newCount.ValidateSentence(inputSent);
       newCount.ValidateWord(inputWord);
